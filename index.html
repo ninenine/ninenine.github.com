@@ -16,20 +16,22 @@
     (wanna-be)&nbsp;writer
 </h2>
 <div class="social">
-	<a href="skype:live:davisjwn?call"><img src="./img/skype_cloud.png" /></a>
-	<a href="https://twitter.com/davisknuckles"><img src="./img/twitter_cloud.png" /></a>
-	<a href="http://ke.linkedin.com/pub/davis-wainaina/20/262/b83"><img src="./img/linkedin_cloud.png" /></a>
-	<a href="mailto:davisjwn@gmail.com"><img src="./img/mail_cloud.png" /></a>
+	<a href="skype:live:davisjwn?call" title="call me on Skype"><img src="./img/skype_cloud.png" /></a>
+	<a href="https://twitter.com/davisknuckles" title="view my twits"><img src="./img/twitter_cloud.png" /></a>
+	<a href="http://ke.linkedin.com/pub/davis-wainaina/20/262/b83" title="view my linkedin profile"><img src="./img/linkedin_cloud.png" /></a>
+	<a href="mailto:davisjwn@gmail.com" title="send me an email"><img src="./img/mail_cloud.png" /></a>
 </div>
 <div class="show_me">
 
 </div>
 </section>
-<script src="jquery.js"></script>
+<script src="./js/jquery-1.3.2.min.js"></script>
+<script src="./js/jquery.qtip-1.0.0-rc3.min.js"></script>
 <script>
     $(function(){
-        $("h1").delay(500).fadeIn(1000);
-        $("h2").delay(1500).fadeIn(1000);
+        $("h1").hide().fadeIn(1500);
+        $("h2").hide().fadeIn(4000);
+		$('a[title]').qtip({ style: { name: 'cream', tip: true } });
 		//TogetherJS(this);
     });
 </script>

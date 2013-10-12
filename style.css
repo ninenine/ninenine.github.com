@@ -34,9 +34,9 @@ span.firstname:hover ~ .nbsp ~ span.lastname > span.sz { display: none }
 
 .profilepic{
 	padding: 10px;
-	-moz-border-radius:52px;
-	-webkit-border-radius:52px;
-	border-radius:52px;
+	-moz-border-radius:100%;
+	-webkit-border-radius:100%;
+	border-radius:100%;
 	width:200px;
 	height:200px;
 }
