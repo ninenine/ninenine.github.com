@@ -3,9 +3,10 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <script>document.documentElement.className="js"</script>
-<title>Davis Wainaina</title>
+<title>The guy also known as ninenine</title>
 <link rel="shortcut icon" href="http://www.gravatar.com/avatar/68db5183e731c9574289f4ea7a5780ac?s=64" type="image/x-icon" />
 <link href="style.css" rel="stylesheet">
+<link href="nv.d3.css" rel="stylesheet">
 </head>
 <body>
 <section id="wrapper">
@@ -22,20 +23,75 @@
 	<a href="mailto:davisjwn@gmail.com" title="send me an email"><img src="./img/mail_cloud.png" /></a>
 </div>
 <div class="show_me">
-
+	<svg id="moi" class="mypiechart"></svg>
 </div>
 </section>
+<!-- Just some tests -->
+<button onclick="TogetherJS(this); return false;">\(^_^)/</button>
+
 <script src="./js/jquery-1.3.2.min.js"></script>
 <script src="./js/jquery.qtip-1.0.0-rc3.min.js"></script>
+<script src="./js/d3.v3.js"></script>
+<script src="./js/nv.d3.min.js"></script>
 <script>
     $(function(){
         $("h1").hide().fadeIn(1500);
         $("h2").hide().fadeIn(4000);
 		$('a[title]').qtip({ style: { name: 'cream', tip: true } });
-		TogetherJS(this);
+		//$("#start-togetherjs").click(TogetherJS);
+		var tdata = [{
+				key : "Python",
+				y : 7
+			}, {
+				key : "C#",
+				y : 3
+			}, {
+				key : "php",
+				y : 5
+			}, {
+				key : "Javascript",
+				y : 6
+			}, {
+				key : "Css",
+				y : 6
+			}
+		];
+
+		nv.addGraph(function () {
+			var width = 500,
+			height = 500;
+			var chart = nv.models.pieChart()
+				.x(function (d) {
+					return d.key
+				})
+				//.showLabels(false)
+				.color(d3.scale.category10().range())
+				.width(width)
+				.height(height)
+				.donut(true);
+
+			chart.pie
+			.startAngle(function (d) {
+				return d.startAngle / 2 - Math.PI / 2
+			})
+			.endAngle(function (d) {
+				return d.endAngle / 2 - Math.PI / 2
+			});
+
+			//chart.pie.donutLabelsOutside(true).donut(true);
+
+			d3.select("#moi")
+			.datum(tdata)
+			.transition().duration(1200)
+			.attr('width', width)
+			.attr('height',height/2)
+			.call(chart);
+
+			return chart;
+		});
     });
-</script>
-<script src="https://togetherjs.com/togetherjs-min.js"></script>
+ </script>
+
 <!-- Quantcast Tag -->
 	<script type="text/javascript">
 	var _qevents = _qevents || [];
@@ -60,5 +116,7 @@
 	</div>
 	</noscript>
 <!-- End Quantcast tag --> 
+
+<script src="https://togetherjs.com/togetherjs-min.js"></script>
 </body>
 </html>
