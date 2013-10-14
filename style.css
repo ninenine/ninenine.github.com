@@ -4,21 +4,22 @@ section {display:block;}
 
 body {
     line-height: 1.4;
-    background: #FFF:
+    background: #FFF;
+    font-size: 13px;
 }
 
 #wrapper {
     min-height: 390px;
     width: 960px;
     margin: 100px auto 20px;
-    font-family: cursive;
+    font-family: 'Autour One', cursive;
 }
 
 h1 {
   line-height: 1.4;
-  font-size: 80px;
+  font-size: 65px;
   text-transform: lowercase;
-  margin: 0 10px;
+  margin: 0 auto;
 }
 
 h1 .firstname { color: #777; }
@@ -63,8 +64,8 @@ button {
 
 
 h2 {
-  font-size: 41px;
-  margin: 0 10px;
+  font-size: 30px;
+  margin: 0 auto;
 }
 
 .js h1, .js h2 { display: none }
